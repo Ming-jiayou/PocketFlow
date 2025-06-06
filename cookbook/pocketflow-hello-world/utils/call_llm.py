@@ -1,13 +1,21 @@
 from openai import OpenAI
+import os
 
-def call_llm(prompt):    
-    client = OpenAI(api_key="YOUR_API_KEY_HERE")
-    r = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt}]
-    )
-    return r.choices[0].message.content
+def call_llm(prompt):
+    client = OpenAI(api_key="sk-cwranjpgrwjqfxkzcwcpulsvtifhcgkmrkuqrsnzbglgiikj", 
+                    base_url="https://api.siliconflow.cn/v1")
     
+    response = client.chat.completions.create(
+        model="Qwen/Qwen2.5-72B-Instruct",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.7
+    )
+    
+    return response.choices[0].message.content
+
 if __name__ == "__main__":
-    prompt = "What is the meaning of life?"
-    print(call_llm(prompt))
+    # Test the LLM call
+    messages = [{"role": "user", "content": "In a few words, what's the meaning of life?"}]
+    response = call_llm(messages)
+    print(f"Prompt: {messages[0]['content']}")
+    print(f"Response: {response}")

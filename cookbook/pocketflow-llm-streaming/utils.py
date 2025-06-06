@@ -1,12 +1,27 @@
 from openai import OpenAI
 import os
 
+# def stream_llm(prompt):
+#     client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "your-api-key"))
+
+#     # Make a streaming chat completion request
+#     response = client.chat.completions.create(
+#         model="gpt-4o",
+#         messages=[
+#             {"role": "user", "content": prompt}
+#         ],
+#         temperature=0.7,
+#         stream=True  # Enable streaming
+#     )
+#     return response
+
 def stream_llm(prompt):
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "your-api-key"))
+    client = OpenAI(api_key="sk-cwranjpgrwjqfxkzcwcpulsvtifhcgkmrkuqrsnzbglgiikj", 
+                    base_url="https://api.siliconflow.cn/v1")
 
     # Make a streaming chat completion request
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="Qwen/Qwen2.5-72B-Instruct",
         messages=[
             {"role": "user", "content": prompt}
         ],
@@ -45,7 +60,7 @@ def fake_stream_llm(prompt, predefined_text="This is a fake response. Today is a
 
 if __name__ == "__main__":
     print("## Testing streaming LLM")
-    prompt = "What's the meaning of life?"
+    prompt = "你是谁？"
     print(f"## Prompt: {prompt}")
     # response = fake_stream_llm(prompt)
     response = stream_llm(prompt)

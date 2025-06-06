@@ -48,7 +48,7 @@ Translated:"""
 
 if __name__ == "__main__":
     # read the text from ../../README.md
-    with open("../../README.md", "r") as f:
+    with open("cookbook/pocketflow-batch/README.md", "r") as f:
         text = f.read()
     
     # Default settings

@@ -2,11 +2,26 @@ import os
 import numpy as np
 from openai import OpenAI
 
+# def get_embedding(text):
+#     client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "YOUR_API_KEY"))
+    
+#     response = client.embeddings.create(
+#         model="text-embedding-ada-002",
+#         input=text
+#     )
+    
+#     # Extract the embedding vector from the response
+#     embedding = response.data[0].embedding
+    
+#     # Convert to numpy array for consistency with other embedding functions
+#     return np.array(embedding, dtype=np.float32)
+
 def get_embedding(text):
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "YOUR_API_KEY"))
+    client = OpenAI(api_key="sk-cwranjpgrwjqfxkzcwcpulsvtifhcgkmrkuqrsnzbglgiikj", 
+                base_url="https://api.siliconflow.cn/v1")
     
     response = client.embeddings.create(
-        model="text-embedding-ada-002",
+        model="BAAI/bge-m3",
         input=text
     )
     

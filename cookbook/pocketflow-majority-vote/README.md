@@ -2,6 +2,8 @@
 
 This project demonstrates a majority vote implementation that enables LLMs to solve complex reasoning problems by aggregating multiple independent attempts. It's designed to improve problem-solving accuracy through consensus-based reasoning.
 
+该项目演示了一个多数投票实现，通过聚合多个独立的尝试，使大型语言模型（LLMs）能够解决复杂的推理问题。它旨在通过基于共识的推理来提高问题解决的准确性。
+
 ## Features
 
 - Improves model reliability on complex problems through multiple attempts

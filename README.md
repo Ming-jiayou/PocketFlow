@@ -63,7 +63,7 @@ From there, it's easy to implement popular design patterns like ([Multi-](https:
 ✨ Below are basic tutorials:
 
 <div align="center">
-  
+
 |  Name  | Difficulty    |  Description  |  
 | :-------------:  | :-------------: | :--------------------- |  
 | [Chat](https://github.com/The-Pocket/PocketFlow/tree/main/cookbook/pocketflow-chat) | ☆☆☆ <br> *Dummy*   | A basic chat bot with conversation history |
@@ -105,7 +105,7 @@ From there, it's easy to implement popular design patterns like ([Multi-](https:
 ✨ Below are examples of more complex LLM Apps:
 
 <div align="center">
-  
+
 |  App Name     |  Difficulty    | Topics  | Human Design | Agent Code |
 | :-------------:  | :-------------: | :---------------------: |  :---: |  :---: |
 | [Build Cursor with Cursor](https://github.com/The-Pocket/Tutorial-Cursor) <br> <sup><sub>We'll reach the singularity soon ...</sup></sub> | ★★★ <br> *Advanced*   | [Agent](https://the-pocket.github.io/PocketFlow/design_pattern/agent.html) | [Design Doc](https://github.com/The-Pocket/Tutorial-Cursor/blob/main/docs/design.md) | [Flow Code](https://github.com/The-Pocket/Tutorial-Cursor/blob/main/flow.py)
@@ -121,5 +121,4 @@ From there, it's easy to implement popular design patterns like ([Multi-](https:
   - Check out [my YouTube](https://www.youtube.com/@ZacharyLLM?sub_confirmation=1) for video tutorial on how some apps above are made!
 
   - Want to build your own LLM App? Read this [post](https://zacharyhuang.substack.com/p/agentic-coding-the-most-fun-way-to)! Start with [this template](https://github.com/The-Pocket/PocketFlow-Template-Python)!
-
 

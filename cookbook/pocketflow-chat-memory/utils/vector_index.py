@@ -1,7 +1,7 @@
 import numpy as np
 import faiss
 
-def create_index(dimension=1536):
+def create_index(dimension=1024):
     return faiss.IndexFlatL2(dimension)
 
 def add_vector(index, vector):

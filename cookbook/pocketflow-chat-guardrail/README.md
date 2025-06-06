@@ -2,10 +2,17 @@
 
 A travel-focused chat application using PocketFlow with OpenAI's GPT-4o model, enhanced with input validation to ensure only travel-related queries are processed.
 
+一个使用PocketFlow和OpenAI的GPT-4o模型的旅行导向聊天应用程序，并增加了输入验证功能，以确保只处理与旅行相关的查询。
+
 ## Features
 
 - Travel advisor chatbot that answers questions about destinations, planning, accommodations, etc.
 - **Topic-specific guardrails** to ensure only travel-related queries are accepted
+
+## 功能
+
+- 旅行顾问聊天机器人，回答关于目的地、规划、住宿等问题。
+- **特定主题的护栏**，以确保只接受与旅行相关的查询。
 
 ## Run It
 
@@ -38,6 +45,15 @@ The chat application uses:
   - LLM-based validation to determine if the query relates to travel
 - An `LLMNode` that processes valid travel queries using GPT-4o with a travel advisor system prompt
 - Flow connections that route inputs through validation before processing and handle retries for non-travel related queries
+
+该聊天应用程序使用：
+
+- 一个 `UserInputNode`，其 `exec` 方法收集用户输入
+- 一个`GuardrailNode`，用于验证查询是否与旅行相关，使用：
+  - 基本验证检查（空输入、过短）
+  - 基于 LLM 的验证，以确定查询是否与旅行相关
+- 一个 `LLMNode`，使用带旅行顾问系统提示的 GPT-4o 处理有效的旅行查询
+- 流连接，在处理之前通过验证路由输入，并处理与旅行无关查询的重复尝试
 
 ## Files
 

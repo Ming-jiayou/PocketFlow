@@ -11,6 +11,13 @@ The example implements a simple word counter that shows how nodes can communicat
 - How to maintain state across multiple node executions
 - Best practices for shared store usage
 
+该示例实现了一个简单的词频计数器，演示了如何利用共享存储实现节点通信。具体展示了：
+
+- 如何初始化和构建共享存储
+- 节点如何向共享存储读写数据
+- 如何在多个节点执行间保持状态
+- 共享存储使用的最佳实践
+
 ## Project Structure
 
 ```

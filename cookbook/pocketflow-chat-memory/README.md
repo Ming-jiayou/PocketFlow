@@ -4,12 +4,23 @@ A chat application with memory retrieval using PocketFlow. This example maintain
 
 This implementation is based directly on the tutorial: [Build AI Agent Memory From Scratch — Tutorial For Dummies](https://zacharyhuang.substack.com/p/build-ai-agent-memory-from-scratch).
 
+该聊天应用程序使用PocketFlow进行记忆检索。这个示例在基于上下文检索相关历史对话的同时，维护了一个近期对话的滑动窗口。
+
+这种实现直接基于教程：[从零开始构建AI代理记忆——菜鸟教程](https://zacharyhuang.substack.com/p/build-ai-agent-memory-from-scratch)。
+
 ## Features
 
 - Maintains a window of 3 most recent conversation pairs
 - Archives older conversations with embeddings
 - Uses vector similarity to retrieve the most relevant past conversation
 - Combines recent context (3 pairs) with retrieved context (1 pair) for better responses
+
+## 功能
+
+- 维护最近3组对话的窗口（即3对对话）
+- 使用嵌入技术归档较旧的对话
+- 利用向量相似度检索最相关的过去对话
+- 结合最近的上下文（3对对话）和检索到的上下文（1对对话）以生成更好的回复
 
 ## Run It
 
@@ -42,6 +53,15 @@ The chat application uses:
   - `AnswerNode`: Generates responses using both recent and retrieved context
   - `EmbedNode`: Archives older conversations with embeddings
 - A sliding window approach that maintains only the 3 most recent conversation pairs in active context
+
+该聊天应用程序使用：
+
+- 四个专用节点：
+  - `GetUserQuestionNode`：处理交互式用户输入
+  - `RetrieveNode`：使用向量相似度查找相关的历史对话
+  - `AnswerNode`：结合近期和检索到的上下文生成回复
+  - `EmbedNode`：使用嵌入技术归档较旧的对话
+- 一种滑动窗口方法，仅维护3组最近的对话对作为活跃上下文
 
 ## Files
 

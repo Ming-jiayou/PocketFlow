@@ -19,7 +19,7 @@ Return strictly using the following YAML structure:
 ```yaml
 thinking: |
     (Your thinking process here)
-answer: 0.123 # Final answer as a decimal with 3 decimal places
+answer:  # Final answer 
 ```"""
         raw_response = call_llm(prompt)
         yaml_part = raw_response.split("```yaml")[1].split("```")[0].strip()
@@ -61,11 +61,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     # Default problem if none provided
-    default_problem = """You work at a shoe factory. In front of you, there are three pairs of shoes (six individual shoes) with the following sizes: two size 4s, two size 5s, and two size 6s. The factory defines an "acceptable pair" as two shoes that differ in size by a maximum of one size (e.g., a size 5 and a size 6 would be an acceptable pair). If you close your eyes and randomly pick three pairs of shoes without replacement, what is the probability that you end up drawing three acceptable pairs?"""
+    default_problem = """北京有什么好玩的？"""
     
     shared = {
         "question": args.problem if args.problem else default_problem,
-        "num_tries": args.tries
+        "num_tries": 3
     }
 
     majority_node = MajorityVoteNode()

@@ -2,10 +2,11 @@ from openai import OpenAI
 import os
 
 def call_llm(messages):
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "your-api-key"))
+    client = OpenAI(api_key="sk-cwranjpgrwjqfxkzcwcpulsvtifhcgkmrkuqrsnzbglgiikj", 
+                    base_url="https://api.siliconflow.cn/v1")
     
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="Qwen/Qwen2.5-72B-Instruct",
         messages=messages,
         temperature=0.7
     )

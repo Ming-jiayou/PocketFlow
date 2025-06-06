@@ -41,4 +41,3 @@ The chat application uses:
 
 - [`main.py`](./main.py): Implementation of the ChatNode and chat flow
 - [`utils.py`](./utils.py): Simple wrapper for calling the OpenAI API
- 

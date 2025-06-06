@@ -18,7 +18,7 @@ class StreamNode(Node):
         # Get prompt from shared store
         prompt = shared["prompt"]
         # Get chunks from LLM function
-        chunks = fake_stream_llm(prompt)
+        chunks = stream_llm(prompt)
         return chunks, interrupt_event, listener_thread
 
     def exec(self, prep_res):
@@ -34,16 +34,18 @@ class StreamNode(Node):
                 time.sleep(0.1)  # simulate latency
         return interrupt_event, listener_thread
 
+
     def post(self, shared, prep_res, exec_res):
         interrupt_event, listener_thread = exec_res
         # Join the interrupt listener so it doesn't linger
+
         interrupt_event.set()
         listener_thread.join()
         return "default"
-
+    
 # Usage:
 node = StreamNode()
 flow = Flow(start=node)
 
-shared = {"prompt": "What's the meaning of life?"}
+shared = {"prompt": "写一首关于春天的诗歌"}
 flow.run(shared)

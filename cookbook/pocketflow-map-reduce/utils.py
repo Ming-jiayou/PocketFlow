@@ -1,13 +1,17 @@
 import os
 from openai import OpenAI
 
-def call_llm(prompt):    
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "your-api-key"))
-    r = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt}]
+def call_llm(prompt):
+    client = OpenAI(api_key="sk-cwranjpgrwjqfxkzcwcpulsvtifhcgkmrkuqrsnzbglgiikj", 
+                    base_url="https://api.siliconflow.cn/v1")
+    
+    response = client.chat.completions.create(
+        model="Qwen/Qwen2.5-72B-Instruct",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.7
     )
-    return r.choices[0].message.content
+    
+    return response.choices[0].message.content
 
 # Example usage
 if __name__ == "__main__":
