@@ -2,6 +2,10 @@
 
 This project demonstrates a simplified RAG system that retrieves relevant documents based on user queries and generates answers using an LLM. This implementation is based directly on the tutorial: [Retrieval Augmented Generation (RAG) from Scratch — Tutorial For Dummies](https://zacharyhuang.substack.com/p/retrieval-augmented-generation-rag).
 
+# 基于检索的生成（RAG）
+
+该项目展示了一个简化的RAG系统，该系统根据用户查询检索相关文档，并使用LLM生成答案。此实现直接基于教程：[从零开始的基于检索的生成（RAG）——新手教程](https://zacharyhuang.substack.com/p/retrieval-augmented-generation-rag)。
+
 
 ## Features
 

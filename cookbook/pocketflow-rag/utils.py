@@ -3,15 +3,17 @@ import numpy as np
 from openai import OpenAI
 
 def call_llm(prompt):    
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "your-api-key"))
+    client = OpenAI(api_key="sk-cwranjpgrwjqfxkzcwcpulsvtifhcgkmrkuqrsnzbglgiikj", 
+                base_url="https://api.siliconflow.cn/v1")
     r = client.chat.completions.create(
-        model="gpt-4o",
+        model="Qwen/Qwen2.5-72B-Instruct",
         messages=[{"role": "user", "content": prompt}]
     )
     return r.choices[0].message.content
 
 def get_embedding(text):
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "your-api-key"))
+    client = OpenAI(api_key="sk-cwranjpgrwjqfxkzcwcpulsvtifhcgkmrkuqrsnzbglgiikj",
+                    base_url="https://api.siliconflow.cn/v1")
     
     response = client.embeddings.create(
         model="text-embedding-ada-002",

@@ -1,9 +1,6 @@
 from pocketflow import Node
-<<<<<<< HEAD
 from utils import call_llm, search_web,search_web_brave
-=======
 from utils import call_llm, search_web_duckduckgo
->>>>>>> 5e3b529b8f8440220020c1bde2b1fb017e12d342
 import yaml
 
 class DecideAction(Node):

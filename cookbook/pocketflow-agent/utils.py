@@ -2,12 +2,9 @@ from openai import OpenAI
 import os
 from duckduckgo_search import DDGS
 import requests
-<<<<<<< HEAD
 import aiohttp
 import asyncio
 import json
-=======
->>>>>>> 5e3b529b8f8440220020c1bde2b1fb017e12d342
 
 # def call_llm(prompt):    
 #     client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "your-api-key"))
@@ -34,42 +31,11 @@ def search_web_duckduckgo(query):
     # Convert results to a string
     results_str = "\n\n".join([f"Title: {r['title']}\nURL: {r['href']}\nSnippet: {r['body']}" for r in results])
     return results_str
-<<<<<<< HEAD
-=======
-
-def search_web_brave(query):
-
-    url = f"https://api.search.brave.com/res/v1/web/search?q={query}"
-    api_key = "your brave search api key"
-
-    headers = {
-        "accept": "application/json",
-        "Accept-Encoding": "gzip",
-        "x-subscription-token": api_key
-    }
-
-    response = requests.get(url, headers=headers)
-
-    if response.status_code == 200:
-        data = response.json()
-        results = data['web']['results']
-        results_str = "\n\n".join([f"Title: {r['title']}\nURL: {r['url']}\nDescription: {r['description']}" for r in results])     
-    else:
-        print(f"Request failed with status code: {response.status_code}")
-    return results_str
-    
-if __name__ == "__main__":
-    print("## Testing call_llm")
-    prompt = "In a few words, what is the meaning of life?"
-    print(f"## Prompt: {prompt}")
-    response = call_llm(prompt)
-    print(f"## Response: {response}")
->>>>>>> 5e3b529b8f8440220020c1bde2b1fb017e12d342
 
 def search_web_brave(query):
     # 设置请求的URL
     url = f"https://api.search.brave.com/res/v1/web/search?q={query}"
-    api_key = "BSA9cyvPikDePs5-0ClSBSKqP5KMnJp"
+    api_key = "BSA9cyvPikDePs5-0ClSBSKqP5Kxxxx"
     # 设置请求头
     headers = {
         "accept": "application/json",

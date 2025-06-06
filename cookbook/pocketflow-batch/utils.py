@@ -13,7 +13,6 @@ import os
 #     return response.content[0].text
 
 def call_llm(prompt):
-<<<<<<< HEAD
     client = OpenAI(api_key="sk-cwranjpgrwjqfxkzcwcpulsvtifhcgkmrkuqrsnzbglgiikj", 
                 base_url="https://api.siliconflow.cn/v1")
     
@@ -22,7 +21,6 @@ def call_llm(prompt):
         messages=[{"role": "user", "content": prompt}]
     )
     return r.choices[0].message.content
-=======
     client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", "your-api-key"))
     response = client.messages.create(
         model="claude-3-7-sonnet-20250219",
@@ -36,7 +34,6 @@ def call_llm(prompt):
         ]
     )
     return response.content[1].text
->>>>>>> 5e3b529b8f8440220020c1bde2b1fb017e12d342
 
 if __name__ == "__main__":
     print("## Testing call_llm")
