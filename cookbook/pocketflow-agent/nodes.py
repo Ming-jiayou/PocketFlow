@@ -1,5 +1,9 @@
 from pocketflow import Node
+<<<<<<< HEAD
 from utils import call_llm, search_web,search_web_brave
+=======
+from utils import call_llm, search_web_duckduckgo
+>>>>>>> 5e3b529b8f8440220020c1bde2b1fb017e12d342
 import yaml
 
 class DecideAction(Node):
@@ -85,7 +89,7 @@ class SearchWeb(Node):
         """Search the web for the given query."""
         # Call the search utility function
         print(f"🌐 Searching the web for: {search_query}")
-        results = search_web(search_query)
+        results = search_web_duckduckgo(search_query)
         return results
     
     def post(self, shared, prep_res, exec_res):
